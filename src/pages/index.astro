@@ -1,0 +1,94 @@
+---
+	import Cheatsheet from "../components/Cheatsheet.svelte";
+	import type Data from "../types/data";
+
+	const data: Data[] = [
+		{
+			title: "tmux",
+			key: [
+				{
+					key: "$",
+					meaning: "Run in terminal",
+				},
+				{
+					key: ":",
+					meaning: "Run in tmux",
+				},
+			],
+			sections: [
+				{
+					title: "Sessions",
+					cheats: [
+						{
+							title: "Start a new session",
+							methods: [
+								"$ tmux new -s session_name",
+							],
+						},
+					]
+				},
+			],
+		},
+		{
+			title: "neovim",
+			key: [
+				{
+					key: "i",
+					meaning: "Insert mode",
+				},
+				{
+					key: "esc",
+					meaning: "Normal mode",
+				},
+			],
+			sections: [
+				{
+					title: "Navigation",
+					cheats: [
+						{
+							title: "Move cursor",
+							methods: [
+								"j - Up",
+								"k - Down",
+								"h - Left",
+								"l - Right",
+							],
+						},
+					]
+				},
+			],
+		}
+	];
+---
+
+<div
+	class="bg-black text-white min-h-screen"
+	id="#"
+>
+	<div class="flex flex-col">
+		<div class="flex md:flex-row flex-col border-b border-solid border-white p-16 items-center  justify-between xl:justify-start">
+			<p class="font-black text-4xl">Cheatsheets</p>
+			<div class="flex flex-row md:ml-16 ml-0 md:mt-0 mt-4 text-indigo-500">
+				{data.map(cheatsheet => <a
+					href={`#${cheatsheet.title}`}
+					class="mr-4"
+				>
+					{cheatsheet.nickname ?? cheatsheet.title}
+				</a>)}
+			</div>
+		</div>
+		{data.map(cheatsheet => <Cheatsheet data={cheatsheet}/>)}
+	</div>
+</div>
+<a
+	href="#"
+	class="fixed bg-indigo-500 text-white rounded-full sm:w-16 sm:h-16 h-12 w-12 flex items-center justify-center font-black text-2xl bottom-8 right-8 sm:bottom-12 sm:right-12"
+>
+	^
+</a>
+
+<style>
+	* {
+		scroll-behavior: smooth;
+	}
+</style>
