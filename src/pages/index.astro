@@ -48,16 +48,187 @@
 						{
 							title: "Move cursor",
 							methods: [
-								"j - Up",
-								"k - Down",
+								"j - Down",
+								"k - Up",
 								"h - Left",
 								"l - Right",
+								// "H - Move to top of screen",
+								"M - Move to middle of screen",
+								// "L - Move to bottom of screen",
+								"fx - Move to next instance of character x",
+								"% - Move to matching character - () [] {}",
 							],
 						},
-					]
+						{
+							title: "Move cursor by word",
+							methods: [
+								"e - Move to end of word",
+								"E - Move to end of word (include punctuation)",
+								"b - Move to beginning of word",
+								"B - Move to beginning of word (include punctuation)",
+								"ge - Move to end of previous word",
+								"gE - Move to end of previous word (include punctuation)",
+							],
+						},
+						{
+							title: "Move cursor by line",
+							methods: [
+								"0 - Move to start of line",
+								"$ - Move to end of line",
+								"^ - Move to first non-blank character of line",
+								"g_ - Move to last non-blank character of line",
+								"gg - Move to first line of file",
+								"G - Move to last line of file",
+								"nG, ngg - Move to line n",
+							],
+						},
+						{
+							title: "Move Page",
+							methods: [
+								"pgup - Move up a page",
+								"pgdn - Move down a page",
+								"ctrl + u - Move up half a page",
+								"ctrl + d - Move down half a page",
+								"ctrl + b - Move up a page",
+								"ctrl + f - Move down a page",
+								"ctrl + y - Move up a line",
+								"ctrl + e - Move down a line",
+							],
+						},
+					],
 				},
+				{
+					title: "Editing",
+					cheats: [
+						{
+							title: "Delete",
+							methods: [
+								"x - Delete character",
+								"X - Delete character before cursor",
+								"dd - Delete line",
+								"dw - Delete word",
+								"d$ - Delete to end of line",
+								"d^ - Delete to first non-blank character of line",
+								"d0 - Delete to start of line",
+								"dG - Delete to end of file",
+								"dg_ - Delete to last non-blank character of line",
+								"ndd - Delete n lines",
+								"ndw - Delete n words",
+								"nd$ - Delete n characters to end of line",
+								"nd^ - Delete n characters to first non-blank character of line",
+								"nd0 - Delete n characters to start of line",
+								"ndG - Delete n characters to end of file",
+								"ndg_ - Delete n characters to last non-blank character of line",
+							],
+						},
+						{
+							title: "Copy",
+							methods: [
+								"yy - Copy line",
+								"yw - Copy word",
+								"y$ - Copy to end of line",
+								"y^ - Copy to first non-blank character of line",
+								"y0 - Copy to start of line",
+								"yG - Copy to end of file",
+								"yg_ - Copy to last non-blank character of line",
+								"nyy - Copy n lines",
+								"nyw - Copy n words",
+								"ny$ - Copy n characters to end of line",
+								"ny^ - Copy n characters to first non-blank character of line",
+								"ny0 - Copy n characters to start of line",
+								"nyG - Copy n characters to end of file",
+								"nyg_ - Copy n characters to last non-blank character of line",
+							],
+						},
+						{
+							title: "Paste",
+							methods: [
+								"p - Paste after cursor",
+								"P - Paste before cursor",
+							],
+						},
+						{
+							title: "Undo",
+							methods: [
+								"u - Undo",
+								"ctrl + r - Redo",
+							],
+						},
+					],
+				},
+				{
+					title: "Search",
+					cheats: [
+						{
+							title: "Search",
+							methods: [
+								"/ - Search forward for string",
+								"? - Search backward for string",
+							],
+						},
+						// {
+						// 	title: "Search and Replace",
+						// 	methods: [
+						// 		":%s/old/new/g - Replace all old with new throughout file",
+						// 		":%s/old/new/gc - Replace all old with new throughout file with confirmations",
+						// 		":s/old/new/g - Replace all old with new in line",
+						// 		":s/old/new/gc - Replace all old with new in line with confirmations",
+						// 		":#,#s/old/new/g - Replace all old with new in range #,#",
+						// 		":#,#s/old/new/gc - Replace all old with new in range #,# with confirmations",
+						// 		":%s/old/new/gI - Replace all old with new throughout file ignoring case",
+						// 		":%s/old/new/gcI - Replace all old with new throughout file with confirmations ignoring case",
+						// 		":s/old/new/gI - Replace all old with new in line ignoring case",
+						// 		":s/old/new/gcI - Replace all old with new in line with confirmations ignoring case",
+						// 		":#,#s/old/new/gI - Replace all old with new in range #,# ignoring case",
+						// 		":#,#s/old/new/gcI - Replace all old with new in range #,# with confirmations ignoring case",
+						// 	],
+						// },
+					],
+				},
+				{
+					title: "Astronvim",
+					cheats: [
+						{
+							title: "Terminal",
+							methods: [
+								"f7 - Toggle terminal",
+								"space tf - Floating terminal",
+								"space th - Horizontal split terminal",
+								"space tv - Vertical split terminal",
+								"space tl - LazyGit",
+							],
+						},
+						{
+							title: "Neotree",
+							methods: [
+								"space + e - Toggle neotree",
+								"space + o - Toggle focus"
+							],
+						},
+						{
+							title: "Sessions",
+							methods: [
+								"space + Ss - Save session",
+								"space + Sl - Load session",
+								"space + Sd - Delete session",
+								"space + Sf - Search session",
+							],
+						}
+					],
+				}
 			],
-		}
+		},
+		// github
+		/**
+		  	create a repository
+
+			git init
+			git add README.md
+			git commit -m "first commit"
+			git branch -M main
+			git remote add origin https://github.com/thereal-atom/cheatsheets.git
+			git push -u origin main
+		 */
 	];
 ---
 
