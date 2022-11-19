@@ -1,5 +1,6 @@
 ---
 	import Cheatsheet from "../components/Cheatsheet.svelte";
+	// import Navbar from "../components/Navbar.svelte";
 	import type Data from "../types/data";
 
 	const data: Data[] = [
@@ -11,8 +12,8 @@
 					meaning: "Run in terminal",
 				},
 				{
-					key: ":",
-					meaning: "Run in tmux",
+					key: "Cb",
+					meaning: "Prefix",
 				},
 			],
 			sections: [
@@ -22,25 +23,160 @@
 						{
 							title: "Start a new session",
 							methods: [
+								"Create session with no name",
+								"$ tmux",
+								"$ tmux new",
+								"Create session with name",
 								"$ tmux new -s session_name",
 							],
 						},
-					]
+						{
+							title: "Show all sessions",
+							methods: [
+								"$ tmux ls",
+								"$ tmux list-sessions",
+								"Cb s",
+							],
+						},
+						{
+							title: "Attach/detach to a session",
+							methods: [
+								"Attach to latest session",
+								"$ tmux a",
+								"$ tmux at",
+								"$ tmux attach",
+								"$ tmux attach-session",
+								"Attach to session with name",
+								"$ tmux a -t session_name",
+								"Detach from a session",
+								"$ tmux detach",
+								"Cb d",
+							],
+						},
+						{
+							title: "Kill/delete a session",
+							methods: [
+								"Kill session with name",
+								"$ tmux kill-ses -t session_name",
+								"$ tmux kill-session -t session_name",
+								"Kill all sessions except the current session",
+								"$ tmux kill-session -a",
+								"Kill all sessions except session with name",
+								"$ tmux kill-session -a -t session_name"
+							],
+						},
+						{
+							title: "Other",
+							methods: [
+								"Cb $ - Rename a session",
+								"Cb w - Session and window preview",
+								"Cb ( - Move to previous session",
+								"Cb ) - Move to next session",
+							]
+						}
+					],
+				},
+				{
+					title: "Windows",
+					cheats: [
+						{
+							title: "Edit a window",
+							methods: [
+								"Cb c - Create a window",
+								"Cb , - Rename current window",
+								"Cb & - Close current window",
+							],
+						},
+						{
+							title: "View windows",
+							methods: [
+								"Cb w - List windows",
+								"Cb p - Previous window",
+								"Cb n - Next window",
+								"Cb 0-9 - Select window by number",
+								"Cb - Toggle last active window",
+							],
+						},
+						{
+							title: "Other",
+							methods: [
+								" : swap-window -s 2 -t 1 - Reorder window, swap window number 2(src) and 1(dst)",
+								" : swap-window -t -1 - Move current window to the left by one position"
+							],
+						},
+					],
+				},
+				{
+					title: "Panes",
+					cheats: [
+						{
+							title: "Switch panes",
+							methods: [
+								"Cb ; - Toggle last active pane",
+								"Cb { - Move the current pane left",
+								"Cb } - Move the current pane right",
+								"Cb hjkl - Move to left, bottom, top and right pane (prefix and key pressed down at the same time",
+								"Cb q 0-9 - Switch pane by number",
+								"Cb o - Switch to next pane",
+							],
+						},
+						{
+							title: "Manipulate panes",
+							methods: [
+								"Cb - - Split pane with horizontal layout (top and bottom)",
+								"Cb | - Split pane with vertial layout (left and right)",
+								"Cb hjkl - Resize pane left, down, up and right pane (prefix THEN key",
+								"Cb ! - Convert pane to window",
+								"Cb z - Maximize and minimize pane",
+								"Cb x - Close current pane",
+							],
+						},
+						{
+							title: "Other",
+							methods: [
+								"Cb q - Show pane numbers",
+							],
+						},
+					],
+				},
+				{
+					title: "Copy mode",
+					cheats: [
+						{
+							title: "General",
+							methods: [
+								"Cb [ - Enter copy mode",
+								" q - Quit mode",
+							],
+						},
+						{
+							title: "Movement",
+							methods: [
+								" g - Go to the top line",
+								" G - Go to the bottom line",
+								" hjkl - Move cursor left, down, up and right",
+								" w - Move cursor to the next word",
+								" b - Move cursor to the last word",
+							],
+						},
+						{
+							title: "Search",
+							methods: [
+								" / - Search forwards",
+								" ? - Search backwards",
+								" n - Next keyword occurance",
+								" N - Previous keyword occurance",
+								" space - Start selection",
+								" esc - Clear selection",
+								" enter - Copy selection",
+							],
+						},
+					],
 				},
 			],
 		},
 		{
 			title: "neovim",
-			key: [
-				{
-					key: "i",
-					meaning: "Insert mode",
-				},
-				{
-					key: "esc",
-					meaning: "Normal mode",
-				},
-			],
 			sections: [
 				{
 					title: "Navigation",
@@ -243,35 +379,79 @@
 			title: "firefox",
 			sections: [
 				{
-					title: "Firefox",
+					title: "Main",
 					cheats: [
 						{
 							title: "History",
 							methods: [
-								"ctrl + shift + h - History",
-								"ctrl + h - History sidebar",
-								"alt + -> - Go forward in history",
-								"alt + <- - Go back in history",
+								"ctrl shift h - History",
+								"ctrl h - History sidebar",
+								"alt -> - Go forward in history",
+								"alt <- - Go back in history",
+								"ctrl shift del - Clear recent history",
+							],
+						},
+						{
+							title: "Tabs",
+							methods: [
+								"ctrl t - New tab",
+								"ctrl w - Close tab",
+								"ctrl T - Undo close tab",
+								"alt 1-8 - Go to tab with number",
+								"alt 9 - Go to last tab",
+								"ctrl pgup, ctrl shift tab - Go one tab left",
+								"ctrl pgdn, ctrl tab - Go one tab right",
+								"ctrl shift pgup - Move tab left",
+								"ctrl shift pgdn - Move tab right",
+								"ctrl shift home - Move tab to start",
+								"ctrl shift end - Move tab to end",
+							],
+						},
+						{
+							title: "Windows",
+							methods: [
+								"ctrl W - Close window",
+								"ctrl N - Undo close window",
+								"ctrl q - Quit",
+								"ctrl n - New window",
+								"ctrl P - New private window",
+							],
+						},
+						{
+							title: "Bookmarks",
+							methods: [
+								"ctrl d - Bookmark current page",
+								"ctrl b - Toggle bookmarks sidebar",
+								"ctrl B - Toggle bookmarks toolbar",
+								"ctrl O - Show all bookmarks",
+							],
+						},
+						{
+							title: "Current page",
+							methods: [
+								"pgup, space - Go up a screen",
+								"pdgn, shift space - Go down a screen",
+								"home, ctrl up - Go to top of page",
+								"end, ctrl dn - Go to bottom of page",
+								"ctrl + - Zoom in",
+								"ctrl - - Zoom out",
+								"ctrl 0 - Zoom reset",
+							],
+						},
+						{
+							title: "Misc",
+							methods: [
+								"F6 - Focus address bar",
 							],
 						},
 					],
 				},
 			],
 		},
-		// github
-		/**
-		  	create a repository
-
-			git init
-			git add README.md
-			git commit -m "first commit"
-			git branch -M main
-			git remote add origin https://github.com/thereal-atom/cheatsheets.git
-			git push -u origin main
-		 */
 	];
 ---
 
+<!-- <Navbar client:idle/> -->
 <div
 	class="bg-black text-white min-h-screen"
 	id="#"
@@ -299,7 +479,18 @@
 </a>
 
 <style>
-	* {
+	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;900&family=Pacifico&display=swap');
+
+	html, body {
+		overflow-x: hidden;
+	}
+
+	:global(html) {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Nunito', sans-serif;
+		scrollbar-width: thick;
 		scroll-behavior: smooth;
 	}
 </style>
