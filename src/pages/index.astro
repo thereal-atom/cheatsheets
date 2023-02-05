@@ -450,6 +450,16 @@
 		},
         {
             title: "django",
+			key: [
+				{
+					key: "$",
+					meaning: "Run in terminal",
+				},
+                {
+                    key: "dj",
+                    meaning: "django admin (python ./manage.py)",
+                }
+			],
             sections: [
                 {
                     title: "General",
@@ -457,10 +467,35 @@
                         {
                             title: "Starting a project",
                             methods: [
-                                "mkdir project-name && cd project-name",
-                                "pipenv install django",
-                                "pipenv shell",
-                                "django-admin startproject project-name .",
+                                "ensure pipenv is installed",
+                                "$ mkdir project-name && cd project-name",
+                                "$ pipenv install django",
+                                "$ pipenv shell",
+                                "$ django-admin startproject project-name .",
+                                "configure python interpreter",
+                                "$ pipenv --venv",
+                                "$ ctrl + shift + p",
+                                "$ select python interpreter",
+                                "$ paste in {{path}}/bin/python",
+                                "use 'python ./manage.py' as django admin from here",
+                                "dj runserver {{port?}}",
+                            ],
+                        },
+                        {
+                            title: "Project structure",
+                            methods: [
+                                "each app is a section of the overall project",
+                                "for example, you may have a chat, a message and a user app in a chat app",
+                                "$ dj startapp {{appname}}",
+                                "then you have to add the app in settings.py in the INSTALLED_APPS array",
+                                "$ INSTALLED_APPS = [ '{{appname}}' ]",
+                                "every app has the exact same structure",
+                                "$ migrations/ - where database tables are generated",
+                                "$ admin.py - where we define how the admin interface for the app will look",
+                                "$ apps.py - where we configure the app (essentially be config.py lol)",
+                                "$ models.py - where database models are defined",
+                                "$ tests.py - where unit tests are writter",
+                                "$ views.py - where requests are handled (essentially be router.py)"
                             ],
                         },
                     ],
